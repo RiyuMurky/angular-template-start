@@ -18,6 +18,9 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
+        "./assets/bootstrap/css/bootstrap.min.css",
+        "./assets/less/AdminLTE.less",
+        "./assets/less/skins/skin-blue.less",
         "styles.css"
       ],
       "scripts": [
