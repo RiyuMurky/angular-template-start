@@ -8,10 +8,14 @@
 
   <div class="navbar-custom-menu">
     <ul class="nav navbar-nav">
-      <app-messages-menu></app-messages-menu>
-      <app-notifications-menu></app-notifications-menu>
-      <app-tasks-menu></app-tasks-menu>
-      <app-user-menu></app-user-menu>
+      <!-- <app-messages-menu></app-messages-menu> -->
+      <!-- <app-notifications-menu></app-notifications-menu> -->
+      <!-- <app-tasks-menu></app-tasks-menu> -->
+      <!-- <app-user-menu></app-user-menu> -->
+      <li app-messages-menu class="dropdown messages-menu"></li>
+      <li app-notifications-menu class="dropdown notifications-menu"></li>
+      <li app-tasks-menu class="dropdown tasks-menu"></li>
+      <li app-user-menu class="dropdown user user-menu"></li>
       <!-- Control Sidebar Toggle Button -->
       <li>
         <a href="#" (click)="onControlSidebarToggle($event)">

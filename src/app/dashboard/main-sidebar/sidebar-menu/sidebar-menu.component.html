@@ -170,3 +170,57 @@
   <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
   <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
 </ul>
+
+<ul class="sidebar-menu">
+  <li class="header">NAVIGATION</li>
+  <!-- TODO: nav menu -->
+  <li *ngFor="let item of items" class="treeview">
+    <a href="#">
+      <i class="fa fa-dashboard"></i> <span>Dashboard</span>
+      <span class="pull-right-container">
+        <i class="fa fa-angle-left pull-right"></i>
+      </span>
+    </a>
+    <ul class="treeview-menu">
+      <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
+      <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
+    </ul>
+  </li>
+  <!-- <template ngFor let-item [ngForOf]="links">
+    <template [ngIf]="!item.sublinks">
+      <li [class.active]="item.link[0] === current_url">
+        <a *ngIf="!item.external" [routerLink]="item.link">
+          <i class="fa fa-{{item.icon}}"></i>
+          <span>{{item.title}}</span>
+        </a>
+        <a *ngIf="item.external" [href]="item.link" [target]="item.target">
+          <i class="fa fa-{{item.icon}}"></i>
+          <span>{{item.title}}</span>
+        </a>
+      </li>
+    </template>
+    <template [ngIf]="item.sublinks">
+      <li class="treeview">
+        <a href="#">
+          <i *ngIf="item.icon" class="fa fa-{{item.icon}}"></i>
+          <span>{{item.title}}</span>
+          <i class="fa fa-angle-left pull-right"></i>
+        </a>
+        <ul class="treeview-menu">
+          <template ngFor let-subitem [ngForOf]="item.sublinks">
+            <li [class.active]="subitem.link[0] === current_url">
+              <a *ngIf="!subitem.external" [routerLink]="subitem.link">
+                <i *ngIf="subitem.icon" class="fa fa-{{subitem.icon}}"></i>
+                <span>{{subitem.title}}</span>
+              </a>
+              <a *ngIf="subitem.external" [href]="subitem.link" [target]="subitem.target">
+                <i *ngIf="subitem.icon" class="fa fa-{{subitem.icon}}"></i>
+                <span>{{subitem.title}}</span>
+              </a>
+            </li>
+          </template>
+        </ul>
+      </li>
+    </template>
+  </template> -->
+</ul>

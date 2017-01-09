@@ -9,7 +9,7 @@
 </aside>
 
 <!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+<div class="content-wrapper" [ngStyle]="{'min-height.px': minHeightContent }">
 <app-content-wrapper></app-content-wrapper>
 </div>
 <!-- /.content-wrapper -->
@@ -19,7 +19,7 @@
 </footer>
 <!-- Control Sidebar -->
 <aside class="control-sidebar control-sidebar-dark">
-<app-control-sidebar></app-control-sidebar>
+  <app-control-sidebar></app-control-sidebar>
 </aside>
 <!-- /.control-sidebar -->
 

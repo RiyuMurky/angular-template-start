@@ -12,7 +12,7 @@
   margin: 60px auto;
   font-size: 10px;
   position: relative;
-  text-indent: -9999em;
+  /*text-indent: -9999em;*/
   border-top: 1.1em solid rgba(200, 200, 200, 0.3);
   border-right: 1.1em solid rgba(200, 200, 200, 0.3);
   border-bottom: 1.1em solid rgba(200, 200, 200, 0.3);
@@ -42,4 +42,9 @@
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
   }
+}
+
+.loader-text {
+  font-size: 16px;
+  text-align: center;
 }

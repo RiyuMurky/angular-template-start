@@ -1,3 +1,3 @@
-<div class="wrapper">
-<app-dashboard></app-dashboard>
+<div class="hold-transition skin-blue sidebar-mini" [ngClass]="{'sidebar-collapse': _stateService.isCloseSidebar }">
+  <div app-dashboard class="wrapper"></div>
 </div>

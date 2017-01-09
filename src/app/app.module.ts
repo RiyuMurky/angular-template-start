@@ -21,6 +21,8 @@ import { SidebarSearchFormComponent } from './dashboard/main-sidebar/sidebar-sea
 import { SidebarMenuComponent } from './dashboard/main-sidebar/sidebar-menu/sidebar-menu.component';
 import { SidebarUserPanelComponent } from './dashboard/main-sidebar/sidebar-user-panel/sidebar-user-panel.component';
 
+import { StateService } from './shared/services/state.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +48,7 @@ import { SidebarUserPanelComponent } from './dashboard/main-sidebar/sidebar-user
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [StateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -18,6 +18,8 @@
       "prefix": "app",
       "mobile": false,
       "styles": [
+        "./assets/font-awesome/css/font-awesome.min.css",
+        "./assets/ionicons/css/ionicons.min.css",
         "./assets/bootstrap/css/bootstrap.min.css",
         "./assets/less/AdminLTE.less",
         "./assets/less/skins/skin-blue.less",

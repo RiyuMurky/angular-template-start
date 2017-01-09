@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-tasks-menu',
+  selector: '[app-tasks-menu]',
   templateUrl: './tasks-menu.component.html',
   styleUrls: ['./tasks-menu.component.css']
 })
