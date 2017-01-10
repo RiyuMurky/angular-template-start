@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderExchangeService } from 'app/shared/services/header-exchange.service';
 
 @Component({
   selector: 'app-main-header',
   templateUrl: './main-header.component.html',
-  styleUrls: ['./main-header.component.css']
+  styleUrls: ['./main-header.component.css'],
+  providers: [ HeaderExchangeService ],
 })
 export class MainHeaderComponent implements OnInit {
 

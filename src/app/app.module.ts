@@ -22,6 +22,7 @@ import { SidebarMenuComponent } from './dashboard/main-sidebar/sidebar-menu/side
 import { SidebarUserPanelComponent } from './dashboard/main-sidebar/sidebar-user-panel/sidebar-user-panel.component';
 
 import { StateService } from './shared/services/state.service';
+import { UserService } from './shared/services/user.service';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,7 @@ import { StateService } from './shared/services/state.service';
     FormsModule,
     HttpModule
   ],
-  providers: [StateService],
+  providers: [StateService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

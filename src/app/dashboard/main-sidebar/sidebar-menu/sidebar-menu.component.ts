@@ -13,6 +13,7 @@ interface  MenuItems {
   href?: string;
   link?: string;
   header?: boolean;
+  isopen?:boolean;
 }
 
 // {
@@ -25,7 +26,7 @@ interface  MenuItems {
 // }
 
 @Component({
-  selector: 'app-sidebar-menu',
+  selector: '[app-sidebar-menu]',
   templateUrl: './sidebar-menu.component.html',
   styleUrls: ['./sidebar-menu.component.css', './sidebar-menu.component.less']
 })
@@ -33,10 +34,7 @@ export class SidebarMenuComponent implements OnInit {
   private currentUrl: string;
 
   @Input()
-  public currentClass: string = 'sidebar-menu';
-
-  @Input()
-  public menuItems: MenuItems[] = [
+  public menuItems: Array<MenuItems> = [
     {
       title: 'NAVIGATION',
       header: true
@@ -62,12 +60,7 @@ export class SidebarMenuComponent implements OnInit {
           link: ''
         }
       ],
-      container: [
-        // {color: 'bg-yellow', label: '12'},
-        // {color: 'bg-green', label: '16'},
-        // {color: 'bg-red', label: '5'},
-        // {color: 'bg-blue', label: '7'}
-      ],
+      container: [],
       href: '',
       link: ''
     },
@@ -135,7 +128,7 @@ export class SidebarMenuComponent implements OnInit {
       items: [
         {
           href: 'pages/charts/chartjs.html',
-          icon: 'fa fa-circle-o"',
+          icon: 'fa fa-circle-o',
           title: 'ChartJS',
           container: [],
           items: [],
@@ -510,6 +503,20 @@ export class SidebarMenuComponent implements OnInit {
       link: ''
     },
   ];
+
+  public onClickMenu(event:Event, index: number){
+    event.preventDefault();
+    event.stopPropagation();
+
+    if(this.menuItems.length > 0){
+      console.log(this.menuItems[index]);
+      if('isopen' in this.menuItems[index] && this.menuItems[index].items.length > 0){
+        this.menuItems[index].isopen = !this.menuItems[index].isopen;
+      } else {
+        this.menuItems[index].isopen = true;
+      }
+    }
+  }
 
   constructor() {
 

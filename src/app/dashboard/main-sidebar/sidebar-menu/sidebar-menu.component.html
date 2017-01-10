@@ -171,16 +171,15 @@
   <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
 </ul> -->
 
-<ul [ngClass]="currentClass">
-  <template ngFor let-item [ngForOf]="menuItems">
+
+  <template ngFor let-item [ngForOf]="menuItems" let-i="index">
       <template [ngIf]="item.header">
         <li class="header">
           <i [ngClass]="item.icon"></i>{{ item.title }}
         </li>
       </template>
-
       <template [ngIf]="!item.header">
-        <li class="treeview" [class.active]="item.link === current_url">
+        <li class="treeview" [class.active]="item.link === currentUrl || item.isopen" (click)="onClickMenu($event, i)">
           <!-- <a [routerLink]="item.link"> -->
           <a href="#">
             <i [ngClass]="item.icon"></i>
@@ -190,16 +189,16 @@
               <small class="label pull-right" *ngFor="let e of item.container" [ngClass]="e.color">{{ e.label }}</small>
             </span>
           </a>
-
-          <app-sidebar-menu [menuItems]="item.items" [currentClass]="'treeview-menu'"></app-sidebar-menu>
+          <ul app-sidebar-menu [menuItems]="item.items" [ngClass]="{ 'menu-open': item.isopen }" class="treeview-menu"></ul>
         </li>
       </template>
-
   </template>
 
 
 
-  <!-- <template ngFor let-item [ngForOf]="links">
+  <!--
+  <ul>
+   <template ngFor let-item [ngForOf]="links">
     <template [ngIf]="!item.sublinks">
       <li [class.active]="item.link[0] === current_url">
         <a *ngIf="!item.external" [routerLink]="item.link">
@@ -235,5 +234,5 @@
         </ul>
       </li>
     </template>
-  </template> -->
-</ul>
+  </template>
+</ul> -->
