@@ -30,11 +30,37 @@ export class UserMenuComponent implements OnInit {
         this.isAriaExpanded = false;
       }
     });
-
     this.currentUser = userService.currentUser;
   }
 
   ngOnInit() {
   }
+
+  // Event click
+  public onClickFollowers(event:Event):void {
+    event.preventDefault();
+    console.log(`onClickFollowers: ${event.target}`);
+  }
+  
+  public onClickSales(event:Event):void {
+    event.preventDefault();
+    console.log(`onClickSales: ${event.target}`);
+  }
+
+  public onClickFriends(event:Event):void {
+    event.preventDefault();
+    console.log(`onClickFriends: ${event.target}`);
+  }
+
+  public onClickProfile(event:Event):void {
+    event.preventDefault();
+    console.log(`onClickProfile: ${event.target}`);
+  }
+
+  public onClickSignOut(event:Event):void {
+    event.preventDefault();
+    console.log(`onClickSignOut: ${event.target}`);
+  }
+
 
 }
