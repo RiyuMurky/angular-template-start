@@ -1,5 +1,5 @@
 <!-- sidebar menu: : style can be found in sidebar.less -->
-<ul class="sidebar-menu">
+<!-- <ul class="sidebar-menu">
   <li class="header">MAIN NAVIGATION</li>
   <li class="active treeview">
     <a href="#">
@@ -169,23 +169,36 @@
   <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
   <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
   <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
-</ul>
+</ul> -->
 
-<ul class="sidebar-menu">
-  <li class="header">NAVIGATION</li>
-  <!-- TODO: nav menu -->
-  <li *ngFor="let item of items" class="treeview">
-    <a href="#">
-      <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-      <span class="pull-right-container">
-        <i class="fa fa-angle-left pull-right"></i>
-      </span>
-    </a>
-    <ul class="treeview-menu">
-      <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-      <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-    </ul>
-  </li>
+<ul [ngClass]="currentClass">
+  <template ngFor let-item [ngForOf]="menuItems">
+      <template [ngIf]="item.header">
+        <li class="header">
+          <i [ngClass]="item.icon"></i>{{ item.title }}
+        </li>
+      </template>
+
+      <template [ngIf]="!item.header">
+        <li class="treeview" [class.active]="item.link === current_url">
+          <!-- <a [routerLink]="item.link"> -->
+          <a href="#">
+            <i [ngClass]="item.icon"></i>
+            <span>{{ item.title }}</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right" *ngIf="item.items.length > 0"></i>
+              <small class="label pull-right" *ngFor="let e of item.container" [ngClass]="e.color">{{ e.label }}</small>
+            </span>
+          </a>
+
+          <app-sidebar-menu [menuItems]="item.items" [currentClass]="'treeview-menu'"></app-sidebar-menu>
+        </li>
+      </template>
+
+  </template>
+
+
+
   <!-- <template ngFor let-item [ngForOf]="links">
     <template [ngIf]="!item.sublinks">
       <li [class.active]="item.link[0] === current_url">

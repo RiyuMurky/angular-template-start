@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
 
   constructor() {
     // $(".content-wrapper, .right-side").css('min-height', sidebar.height());
-    this.minHeightContent = 820;
+    this.minHeightContent = 1820;
   }
 
   ngOnInit() {
