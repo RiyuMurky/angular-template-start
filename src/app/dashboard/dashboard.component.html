@@ -1,25 +1,29 @@
-<header class="main-header">
-  <app-main-header></app-main-header>
-</header>
+<div class="hold-transition skin-blue sidebar-mini" [ngClass]="{'sidebar-collapse': stateService.isCloseSidebar }">
+  <div class="wrapper">
+    <header class="main-header">
+      <app-main-header></app-main-header>
+    </header>
 
-<!-- Left side column. contains the logo and sidebar -->
-<aside class="main-sidebar">
-<app-main-sidebar></app-main-sidebar>
-<!-- /.sidebar -->
-</aside>
+    <!-- Left side column. contains the logo and sidebar -->
+    <aside class="main-sidebar">
+    <app-main-sidebar></app-main-sidebar>
+    <!-- /.sidebar -->
+    </aside>
 
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper" [ngStyle]="{'min-height.px': minHeightContent }">
-<app-content-wrapper></app-content-wrapper>
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" [ngStyle]="{'min-height.px': minHeightContent }">
+    <app-content-wrapper></app-content-wrapper>
+    </div>
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+      <app-main-footer></app-main-footer>
+    </footer>
+    <!-- Control Sidebar -->
+    <aside app-control-sidebar class="control-sidebar control-sidebar-dark"></aside>
+    <!-- /.control-sidebar -->
+    <!-- Add the sidebar's background. This div must be placed
+         immediately after the control sidebar -->
+    <div class="control-sidebar-bg"></div>
+  </div>
 </div>
-<!-- /.content-wrapper -->
-
-<footer class="main-footer">
-  <app-main-footer></app-main-footer>
-</footer>
-<!-- Control Sidebar -->
-<aside app-control-sidebar class="control-sidebar control-sidebar-dark"></aside>
-<!-- /.control-sidebar -->
-<!-- Add the sidebar's background. This div must be placed
-     immediately after the control sidebar -->
-<div class="control-sidebar-bg"></div>

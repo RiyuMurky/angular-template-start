@@ -2,6 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import {RouterModule, Route, Routes, CanActivate,CanDeactivate} from '@angular/router';
+
+import { StateService } from './shared/services/state.service';
+import { UserService } from './shared/services/user.service';
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -20,9 +26,17 @@ import { ControlSidebarComponent } from './dashboard/control-sidebar/control-sid
 import { SidebarSearchFormComponent } from './dashboard/main-sidebar/sidebar-search-form/sidebar-search-form.component';
 import { SidebarMenuComponent } from './dashboard/main-sidebar/sidebar-menu/sidebar-menu.component';
 import { SidebarUserPanelComponent } from './dashboard/main-sidebar/sidebar-user-panel/sidebar-user-panel.component';
+import { DashboardV1Component } from './pages/dashboard-v1/dashboard-v1.component';
+import { DashboardV2Component } from './pages/dashboard-v2/dashboard-v2.component';
+import { BlankPageComponent } from './pages/blank-page/blank-page.component';
 
-import { StateService } from './shared/services/state.service';
-import { UserService } from './shared/services/user.service';
+// const appRoutes: Routes = [
+//   { path: 'login', component: LoginComponent },
+//   { path: 'signup', component: SignupComponent },
+//   { path: 'dashboard', component: DashboardComponent },
+//   { path: '**', redirectTo: '/dashboard', pathMatch: 'full' }
+// ];
+
 
 @NgModule({
   declarations: [
@@ -42,12 +56,17 @@ import { UserService } from './shared/services/user.service';
     ControlSidebarComponent,
     SidebarSearchFormComponent,
     SidebarMenuComponent,
-    SidebarUserPanelComponent
+    SidebarUserPanelComponent,
+    DashboardV1Component,
+    DashboardV2Component,
+    BlankPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
+    // RouterModule.forRoot(appRoutes)
   ],
   providers: [StateService, UserService],
   bootstrap: [AppComponent]

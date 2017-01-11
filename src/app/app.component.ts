@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { StateService } from './shared/services/state.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +8,7 @@ import { StateService } from './shared/services/state.service';
 export class AppComponent {
   public title = 'app works!';
 
-  public constructor(public _stateService:StateService){
+  public constructor(){
 
   }
 }

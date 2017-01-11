@@ -1,17 +1,17 @@
-interface MenuItemsContainer {
+interface MenuItemContainer {
   color: string;
   label: string;
 }
 
-interface  MenuItems {
+interface  MenuItem {
   icon?: string;
   title: string;
-  items?: Array<MenuItems>;
-  container?: Array<MenuItemsContainer>;
+  items?: Array<MenuItem>;
+  container?: Array<MenuItemContainer>;
   href?: string;
   link?: string;
   header?: boolean;
-  isopen?:boolean;
+  active?:boolean;
 }
 
 // {

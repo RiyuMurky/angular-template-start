@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { SidebarMenuExchangeService } from 'app/shared/services/sidebar-menu-exchange.service';
 
 @Component({
   selector: '[app-sidebar-menu]',
@@ -6,10 +7,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./sidebar-menu.component.css', './sidebar-menu.component.less']
 })
 export class SidebarMenuComponent implements OnInit {
-  private currentUrl: string;
 
   @Input()
-  public menuItems: Array<MenuItems> = [
+  public currentItem: MenuItem;
+
+  @Input()
+  public menuItems: Array<MenuItem> = [
     {
       title: 'NAVIGATION',
       header: true
@@ -24,7 +27,7 @@ export class SidebarMenuComponent implements OnInit {
           items: [],
           container: [],
           href: 'index.html',
-          link: ''
+          link: 'dashboardv1'
         },
         {
           icon: 'fa fa-circle-o',
@@ -32,7 +35,7 @@ export class SidebarMenuComponent implements OnInit {
           items: [],
           container: [],
           href: 'index2.html',
-          link: ''
+          link: 'dashboardv2'
         }
       ],
       container: [],
@@ -479,25 +482,58 @@ export class SidebarMenuComponent implements OnInit {
     },
   ];
 
-  public onClickMenu(event:Event, index: number){
+  public onClickMenu(event:Event, index: number):void {
     event.preventDefault();
     event.stopPropagation();
 
-    if(this.menuItems.length > 0){
-      console.log(this.menuItems[index]);
-      if('isopen' in this.menuItems[index] && this.menuItems[index].items.length > 0){
-        this.menuItems[index].isopen = !this.menuItems[index].isopen;
-      } else {
-        this.menuItems[index].isopen = true;
-      }
+    if('active' in this.menuItems[index] && this.menuItems[index].items.length > 0){
+      this.menuItems[index].active = !this.menuItems[index].active;
+    } else {
+      this.menuItems[index].active = true;
     }
+
+    console.log(event.target);
+    console.log(index);
   }
 
-  constructor() {
+  public onClickMenuPrevent(event:Event, index: number):void {
+    event.preventDefault();
 
+    console.log(event.target);
+    console.log(index);
+  }
+
+  public onClickMenuSelect(event:Event, item: MenuItem):void {
+    event.preventDefault();
+    event.stopPropagation();
+
+    this._smExchangeService.openMenu(this.currentItem);
+    item.active = true;
+
+  }
+
+  public constructor(private _smExchangeService:SidebarMenuExchangeService) {
+
+  }
+
+  private recursiveSelect(item: MenuItem, menuItems: Array<MenuItem>):boolean {
+    let result: boolean = false;
+    for(let i=0; i < menuItems.length; i++){
+      result = this.recursiveSelect(item, menuItems[i].items);
+      if(menuItems[i] === item){
+        result = true;
+      };
+      menuItems[i].active = result;
+    };
+    return result;
   }
 
   ngOnInit() {
+    if(!this.currentItem){
+      this._smExchangeService.openMenuSubject.subscribe((item:MenuItem) => {
+        this.recursiveSelect(item, this.menuItems);
+      });
+    }
   }
 
 }

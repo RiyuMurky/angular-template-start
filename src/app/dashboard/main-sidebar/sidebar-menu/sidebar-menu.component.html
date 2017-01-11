@@ -179,18 +179,30 @@
         </li>
       </template>
       <template [ngIf]="!item.header">
-        <li class="treeview" [class.active]="item.link === currentUrl || item.isopen" (click)="onClickMenu($event, i)">
-          <!-- <a [routerLink]="item.link"> -->
-          <a href="#">
-            <i [ngClass]="item.icon"></i>
-            <span>{{ item.title }}</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right" *ngIf="item.items.length > 0"></i>
-              <small class="label pull-right" *ngFor="let e of item.container" [ngClass]="e.color">{{ e.label }}</small>
-            </span>
-          </a>
-          <ul app-sidebar-menu [menuItems]="item.items" [ngClass]="{ 'menu-open': item.isopen }" class="treeview-menu"></ul>
-        </li>
+        <template [ngIf]="item.items.length > 0">
+          <li class="treeview" [class.active]="item.active" (click)="onClickMenu($event, i)">
+            <a (click)="onClickMenuPrevent($event, i)">
+              <i [ngClass]="item.icon"></i>
+              <span>{{ item.title }}</span>
+              <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+                <small class="label pull-right" *ngFor="let e of item.container" [ngClass]="e.color">{{ e.label }}</small>
+              </span>
+            </a>
+            <ul app-sidebar-menu [currentItem]="item" [menuItems]="item.items" [ngClass]="{ 'menu-open': item.isopen }" class="treeview-menu"></ul>
+          </li>
+        </template>
+        <template [ngIf]="item.items.length === 0">
+          <li class="treeview" [class.active]="item.active">
+            <a [routerLink]="item.link" (click)="onClickMenuSelect($event, item)">
+              <i [ngClass]="item.icon"></i>
+              <span>{{ item.title }}</span>
+              <span class="pull-right-container">
+                <small class="label pull-right" *ngFor="let e of item.container" [ngClass]="e.color">{{ e.label }}</small>
+              </span>
+            </a>
+          </li>
+        </template>
       </template>
   </template>
 
