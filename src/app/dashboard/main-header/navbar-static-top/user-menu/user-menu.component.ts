@@ -9,8 +9,8 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./user-menu.component.css']
 })
 export class UserMenuComponent implements OnInit {
-  // TODO: currentUser type
-  public currentUser:Observable<any>;
+  
+  public currentUser:Observable<User>;
 
   @HostBinding('class.open')
   public isAriaExpanded: boolean = false;
@@ -41,7 +41,7 @@ export class UserMenuComponent implements OnInit {
     event.preventDefault();
     console.log(`onClickFollowers: ${event.target}`);
   }
-  
+
   public onClickSales(event:Event):void {
     event.preventDefault();
     console.log(`onClickSales: ${event.target}`);
