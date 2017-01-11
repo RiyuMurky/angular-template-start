@@ -10,7 +10,6 @@ import { DashboardV2Component } from './pages/dashboard-v2/dashboard-v2.componen
 import { BlankPageComponent } from './pages/blank-page/blank-page.component';
 
 // PageNotFoundComponent
-
 const appRoutes: Routes = [
   { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
