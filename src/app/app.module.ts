@@ -29,6 +29,24 @@ import { SidebarUserPanelComponent } from './dashboard/main-sidebar/sidebar-user
 import { DashboardV1Component } from './pages/dashboard-v1/dashboard-v1.component';
 import { DashboardV2Component } from './pages/dashboard-v2/dashboard-v2.component';
 import { BlankPageComponent } from './pages/blank-page/blank-page.component';
+import { BreadcrumbComponent } from './shared/widgets/breadcrumb/breadcrumb.component';
+import { LayoutOptionsComponent } from './pages/layout-options/layout-options.component';
+import { WidgetsComponent } from './pages/widgets/widgets.component';
+import { ChartsComponent } from './pages/charts/charts.component';
+import { UiElementsGeneralComponent } from './pages/ui-elements-general/ui-elements-general.component';
+import { UiElementsIconsComponent } from './pages/ui-elements-icons/ui-elements-icons.component';
+import { UiElementsButtonsComponent } from './pages/ui-elements-buttons/ui-elements-buttons.component';
+import { UiElementsSlidersComponent } from './pages/ui-elements-sliders/ui-elements-sliders.component';
+import { UiElementsTimelineComponent } from './pages/ui-elements-timeline/ui-elements-timeline.component';
+import { UiElementsModalsComponent } from './pages/ui-elements-modals/ui-elements-modals.component';
+import { FormsGeneralElementsComponent } from './pages/forms-general-elements/forms-general-elements.component';
+import { FormsAdvancedElementsComponent } from './pages/forms-advanced-elements/forms-advanced-elements.component';
+import { FormsEditorsComponent } from './pages/forms-editors/forms-editors.component';
+import { SimpleTablesComponent } from './pages/simple-tables/simple-tables.component';
+import { DataTablesComponent } from './pages/data-tables/data-tables.component';
+import { CalendarComponent } from './pages/calendar/calendar.component';
+import { MailboxComponent } from './pages/mailbox/mailbox.component';
+import { DocumentationComponent } from './pages/documentation/documentation.component';
 
 // const appRoutes: Routes = [
 //   { path: 'login', component: LoginComponent },
@@ -59,7 +77,25 @@ import { BlankPageComponent } from './pages/blank-page/blank-page.component';
     SidebarUserPanelComponent,
     DashboardV1Component,
     DashboardV2Component,
-    BlankPageComponent
+    BlankPageComponent,
+    BreadcrumbComponent,
+    LayoutOptionsComponent,
+    WidgetsComponent,
+    ChartsComponent,
+    UiElementsGeneralComponent,
+    UiElementsIconsComponent,
+    UiElementsButtonsComponent,
+    UiElementsSlidersComponent,
+    UiElementsTimelineComponent,
+    UiElementsModalsComponent,
+    FormsGeneralElementsComponent,
+    FormsAdvancedElementsComponent,
+    FormsEditorsComponent,
+    SimpleTablesComponent,
+    DataTablesComponent,
+    CalendarComponent,
+    MailboxComponent,
+    DocumentationComponent
   ],
   imports: [
     BrowserModule,

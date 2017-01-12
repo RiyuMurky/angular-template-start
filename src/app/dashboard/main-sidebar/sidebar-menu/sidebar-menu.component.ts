@@ -51,40 +51,40 @@ export class SidebarMenuComponent implements OnInit {
         label: '4'
       }],
       items: [
-        {
-          href: 'pages/layout/top-nav.html',
-          icon: 'fa fa-circle-o',
-          title: 'Top Navigation',
-          container: [],
-          items: [],
-          link: ''
-        },
-        {
-          href: 'pages/layout/boxed.html',
-          icon: 'fa fa-circle-o',
-          title: 'Boxed',
-          container: [],
-          items: [],
-          link: ''
-        },
-        {
-          href: 'pages/layout/fixed.html',
-          icon: 'fa fa-circle-o',
-          title: 'Fixed',
-          container: [],
-          items: [],
-          link: ''
-        },
-        {
-          href: 'pages/layout/collapsed-sidebar.html',
-          icon: 'fa fa-circle-o',
-          title: 'Collapsed Sidebar',
-          container: [],
-          items: [],
-          link: ''
-        }
+        // {
+        //   href: 'pages/layout/top-nav.html',
+        //   icon: 'fa fa-circle-o',
+        //   title: 'Top Navigation',
+        //   container: [],
+        //   items: [],
+        //   link: 'layoutoptions'
+        // },
+        // {
+        //   href: 'pages/layout/boxed.html',
+        //   icon: 'fa fa-circle-o',
+        //   title: 'Boxed',
+        //   container: [],
+        //   items: [],
+        //   link: 'layoutoptions'
+        // },
+        // {
+        //   href: 'pages/layout/fixed.html',
+        //   icon: 'fa fa-circle-o',
+        //   title: 'Fixed',
+        //   container: [],
+        //   items: [],
+        //   link: 'layoutoptions'
+        // },
+        // {
+        //   href: 'pages/layout/collapsed-sidebar.html',
+        //   icon: 'fa fa-circle-o',
+        //   title: 'Collapsed Sidebar',
+        //   container: [],
+        //   items: [],
+        //   link: 'layoutoptions'
+        // }
       ],
-      link: ''
+      link: 'layoutoptions'
     },
     {
       // TODO: not use class treeview
@@ -96,7 +96,7 @@ export class SidebarMenuComponent implements OnInit {
         label: 'new'
       }],
       items: [],
-      link: ''
+      link: 'widgets'
     },
     {
       href: '#',
@@ -104,40 +104,40 @@ export class SidebarMenuComponent implements OnInit {
       title: 'Charts',
       container: [],
       items: [
-        {
-          href: 'pages/charts/chartjs.html',
-          icon: 'fa fa-circle-o',
-          title: 'ChartJS',
-          container: [],
-          items: [],
-          link: ''
-        },
-        {
-          href: 'pages/charts/morris.html',
-          icon: 'fa fa-circle-o',
-          title: 'Morris',
-          container: [],
-          items: [],
-          link: ''
-        },
-        {
-          href: 'pages/charts/flot.html',
-          icon: 'fa fa-circle-o',
-          title: 'Flot',
-          container: [],
-          items: [],
-          link: ''
-        },
-        {
-          href: 'pages/charts/inline.html',
-          icon: 'fa fa-circle-o',
-          title: 'Inline charts',
-          container: [],
-          items: [],
-          link: ''
-        }
+        // {
+        //   href: 'pages/charts/chartjs.html',
+        //   icon: 'fa fa-circle-o',
+        //   title: 'ChartJS',
+        //   container: [],
+        //   items: [],
+        //   link: ''
+        // },
+        // {
+        //   href: 'pages/charts/morris.html',
+        //   icon: 'fa fa-circle-o',
+        //   title: 'Morris',
+        //   container: [],
+        //   items: [],
+        //   link: ''
+        // },
+        // {
+        //   href: 'pages/charts/flot.html',
+        //   icon: 'fa fa-circle-o',
+        //   title: 'Flot',
+        //   container: [],
+        //   items: [],
+        //   link: ''
+        // },
+        // {
+        //   href: 'pages/charts/inline.html',
+        //   icon: 'fa fa-circle-o',
+        //   title: 'Inline charts',
+        //   container: [],
+        //   items: [],
+        //   link: ''
+        // }
       ],
-      link: ''
+      link: 'charts'
     },
     {
       href: '#',
@@ -151,7 +151,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'General',
           container: [],
           items: [],
-          link: ''
+          link: 'uielementsgeneral'
         },
         {
           href: 'pages/UI/icons.html',
@@ -159,7 +159,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Icons',
           container: [],
           items: [],
-          link: ''
+          link: 'uielementsicons'
         },
         {
           href: 'pages/UI/buttons.html',
@@ -167,7 +167,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Buttons',
           container: [],
           items: [],
-          link: ''
+          link: 'uielementsbuttons'
         },
         {
           href: 'pages/UI/sliders.html',
@@ -175,7 +175,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Sliders',
           container: [],
           items: [],
-          link: ''
+          link: 'uielementssliders'
         },
         {
           href: 'pages/UI/timeline.html',
@@ -183,7 +183,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Timeline',
           container: [],
           items: [],
-          link: ''
+          link: 'uielementstimeline'
         },
         {
           href: 'pages/UI/modals.html',
@@ -191,7 +191,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Modals',
           container: [],
           items: [],
-          link: ''
+          link: 'uielementsmodals'
         }
       ],
       link: ''
@@ -208,7 +208,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'General Elements',
           container: [],
           items: [],
-          link: ''
+          link: 'formsgeneral'
         },
         {
           href: 'pages/forms/advanced.html',
@@ -216,7 +216,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Advanced Elements',
           container: [],
           items: [],
-          link: ''
+          link: 'formsadvanced'
         },
         {
           href: 'pages/forms/editors.html',
@@ -224,7 +224,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Editors',
           container: [],
           items: [],
-          link: ''
+          link: 'formseditors'
         }
       ],
       link: ''
@@ -241,7 +241,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Simple tables',
           container: [],
           items: [],
-          link: ''
+          link: 'simpletables'
         },
         {
           href: 'pages/tables/data.html',
@@ -249,7 +249,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Data tables',
           container: [],
           items: [],
-          link: ''
+          link: 'datatables'
         }
       ],
       link: ''
@@ -270,7 +270,7 @@ export class SidebarMenuComponent implements OnInit {
         }
       ],
       items: [],
-      link: ''
+      link: 'calendar'
     },
     // TODO: not use treeview
     {
@@ -292,7 +292,7 @@ export class SidebarMenuComponent implements OnInit {
         }
       ],
       items: [],
-      link: ''
+      link: 'mailbox'
     },
     {
       href: '#',
@@ -322,7 +322,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Login',
           container: [],
           items: [],
-          link: ''
+          link: '../login'
         },
         {
           href: 'pages/examples/register.html',
@@ -330,7 +330,7 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Register',
           container: [],
           items: [],
-          link: ''
+          link: '../signup'
         },
         {
           href: 'pages/examples/lockscreen.html',
@@ -362,12 +362,12 @@ export class SidebarMenuComponent implements OnInit {
           title: 'Blank Page',
           container: [],
           items: [],
-          link: ''
+          link: 'blackpage'
         },
         {
           href: 'pages/examples/pace.html',
           icon: 'fa fa-circle-o',
-          title: 'Pace Page<',
+          title: 'Pace Page',
           container: [],
           items: [],
           link: ''
@@ -449,7 +449,7 @@ export class SidebarMenuComponent implements OnInit {
       title: 'Documentation',
       container: [],
       items: [],
-      link: ''
+      link: 'documentation'
     },
     // TODO: not use treeview
     {
@@ -491,16 +491,10 @@ export class SidebarMenuComponent implements OnInit {
     } else {
       this.menuItems[index].active = true;
     }
-
-    console.log(event.target);
-    console.log(index);
   }
 
   public onClickMenuPrevent(event:Event, index: number):void {
     event.preventDefault();
-
-    console.log(event.target);
-    console.log(index);
   }
 
   public onClickMenuSelect(event:Event, item: MenuItem):void {
@@ -518,12 +512,15 @@ export class SidebarMenuComponent implements OnInit {
 
   private recursiveSelect(item: MenuItem, menuItems: Array<MenuItem>):boolean {
     let result: boolean = false;
+    let check: boolean = false;
     for(let i=0; i < menuItems.length; i++){
-      result = this.recursiveSelect(item, menuItems[i].items);
+      if(menuItems[i].header) continue;
+      check = this.recursiveSelect(item, menuItems[i].items);
       if(menuItems[i] === item){
-        result = true;
+        check = true;
       };
-      menuItems[i].active = result;
+      menuItems[i].active = check;
+      result = result || check;
     };
     return result;
   }

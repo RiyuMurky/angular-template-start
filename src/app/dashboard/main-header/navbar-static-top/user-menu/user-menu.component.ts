@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Observable';
   styleUrls: ['./user-menu.component.css']
 })
 export class UserMenuComponent implements OnInit {
-  
+
   public currentUser:Observable<User>;
 
   @HostBinding('class.open')
@@ -17,6 +17,7 @@ export class UserMenuComponent implements OnInit {
   public lastToggleEvent: Event;
 
   public onClickDropdownToggle(event:Event):void {
+    event.preventDefault();
     this.isAriaExpanded = !this.isAriaExpanded;
     if(this.isAriaExpanded){
       this.lastToggleEvent = event;

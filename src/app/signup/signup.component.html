@@ -1,5 +1,6 @@
 <!-- <title>AdminLTE 2 | Registration Page</title> -->
 <!-- <body class="hold-transition register-page"> -->
+<div class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
     <a href="../../index2.html"><b>Admin</b>LTE</a>
@@ -27,9 +28,11 @@
       </div>
       <div class="row">
         <div class="col-xs-8">
-          <div class="checkbox icheck">
+          <!-- TODO: class iCheck -->
+          <!-- <div class="checkbox icheck"> -->
+          <div class="checkbox">
             <label>
-              <input type="checkbox"> I agree to the <a href="#">terms</a>
+              <input type="checkbox"> I agree to the <a href="#" (click)="onClickTerms($event)">terms</a>
             </label>
           </div>
         </div>
@@ -49,9 +52,10 @@
         Google+</a>
     </div>
 
-    <a href="login.html" class="text-center">I already have a membership</a>
+    <a routerLink="/login" class="text-center">I already have a membership</a>
   </div>
   <!-- /.form-box -->
 </div>
 <!-- /.register-box -->
+</div>
 <!-- </body> -->

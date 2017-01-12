@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  public onClickTerms(event:Event):void {
+    event.preventDefault();
+  }
+
+  public constructor() { }
 
   ngOnInit() {
   }

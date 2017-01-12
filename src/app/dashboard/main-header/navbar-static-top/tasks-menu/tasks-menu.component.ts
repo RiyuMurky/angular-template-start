@@ -13,6 +13,7 @@ export class TasksMenuComponent implements OnInit {
   public lastToggleEvent: Event;
 
   public onClickDropdownToggle(event:Event):void {
+    event.preventDefault();
     this.isAriaExpanded = !this.isAriaExpanded;
     if(this.isAriaExpanded){
       this.lastToggleEvent = event;
