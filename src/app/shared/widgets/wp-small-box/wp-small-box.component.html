@@ -1,0 +1,14 @@
+<!-- small box -->
+<div class="small-box" [ngClass]="wpBoxData.bgColorClass">
+  <div class="inner">
+    <h3>{{wpBoxData.headerText}}</h3>
+    <p>{{wpBoxData.descriptionText}}</p>
+  </div>
+  <div class="icon">
+    <i [ngClass]="wpBoxData.iconClass"></i>
+  </div>
+  <a href="#" class="small-box-footer" (click)="onClickMoreInfo($event)">
+    {{wpBoxData.infoText}}
+    <i [ngClass]="wpBoxData.infoIconClass"></i>
+  </a>
+</div>

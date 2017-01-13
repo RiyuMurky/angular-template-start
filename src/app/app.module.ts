@@ -3,9 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Route, Routes, CanActivate,CanDeactivate} from '@angular/router';
+import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { StateService } from './shared/services/state.service';
 import { UserService } from './shared/services/user.service';
+import { WidgetExchangeService } from './shared/services/widget-exchange.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -47,6 +49,9 @@ import { DataTablesComponent } from './pages/data-tables/data-tables.component';
 import { CalendarComponent } from './pages/calendar/calendar.component';
 import { MailboxComponent } from './pages/mailbox/mailbox.component';
 import { DocumentationComponent } from './pages/documentation/documentation.component';
+import { WpSmallBoxComponent } from './shared/widgets/wp-small-box/wp-small-box.component';
+import { WpInfoBoxComponent } from './shared/widgets/wp-info-box/wp-info-box.component';
+import { WpDirectChatComponent } from './shared/widgets/wp-direct-chat/wp-direct-chat.component';
 
 // const appRoutes: Routes = [
 //   { path: 'login', component: LoginComponent },
@@ -95,16 +100,20 @@ import { DocumentationComponent } from './pages/documentation/documentation.comp
     DataTablesComponent,
     CalendarComponent,
     MailboxComponent,
-    DocumentationComponent
+    DocumentationComponent,
+    WpSmallBoxComponent,
+    WpInfoBoxComponent,
+    WpDirectChatComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ChartsModule
     // RouterModule.forRoot(appRoutes)
   ],
-  providers: [StateService, UserService],
+  providers: [StateService, UserService, WidgetExchangeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

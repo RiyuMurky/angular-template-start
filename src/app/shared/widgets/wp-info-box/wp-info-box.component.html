@@ -1,0 +1,19 @@
+<!-- info-box -->
+<div class="info-box" [ngClass]="wpBoxData.bgColorClass">
+  <span class="info-box-icon" [ngClass]="wpBoxData.labelColorClass">
+    <i [ngClass]="wpBoxData.labelIconClass"></i>
+  </span>
+
+  <div class="info-box-content">
+    <span class="info-box-text">{{wpBoxData.contentText}}</span>
+    <span class="info-box-number">{{wpBoxData.contentNumber}}</span>
+    <div *ngIf="wpBoxData.progress">
+      <div class="progress">
+        <div class="progress-bar" [style.width]="wpBoxData.progressValue"></div>
+      </div>
+      <span class="progress-description">{{wpBoxData.progressDesc}}</span>
+    </div>
+  </div>
+  <!-- /.info-box-content -->
+</div>
+<!-- /.info-box -->
