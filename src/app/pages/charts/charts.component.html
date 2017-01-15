@@ -1,20 +1,39 @@
-<div class="col-md-6">
-  <canvas baseChart
-              [data]="lineChartData"
-              [labels]="lineChartLabels"
-              [options]="lineChartOptions"
-              [chartType]="lineChartType"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)"></canvas>
-</div>
-<div class="col-md-6">
-  <canvas baseChart
-              [data]="pieChartData"
-              [labels]="pieChartLabels"
-              [chartType]="pieChartType"
-              (chartHover)="chartHovered($event)"
-              (chartClick)="chartClicked($event)"></canvas>
-</div>
-<div class="col-md-12 text-center" style="margin-top: 10px;height: 50%">
-  <button (click)="randomizeType()" style="display: inline-block">Toggle</button>
+<div class="row">
+  <div class="col-md-12">
+    <div class="box box-primary">
+      <div class="box-header with-border">
+        <h3 class="box-title">Area Chart</h3>
+        <div class="box-tools pull-right">
+          <button type="button" class="btn btn-box-tool bg-red"
+          (click)="randomizeType()">
+        <i class="fa fa-repeat"></i>
+        Toggle Chart
+      </button>
+        </div>
+      </div>
+      <div class="box-body">
+        <div class="row">
+          <div class="col-md-6">
+            <canvas baseChart [data]="lineChartData"
+             [labels]="lineChartLabels"
+             [options]="lineChartOptions"
+             [chartType]="lineChartType"
+             (chartHover)="chartHovered($event)"
+             (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <div class="col-md-6">
+            <canvas baseChart
+            [data]="pieChartData"
+            [labels]="pieChartLabels"
+            [chartType]="pieChartType"
+            (chartHover)="chartHovered($event)"
+            (chartClick)="chartClicked($event)"></canvas>
+          </div>
+        </div>
+
+      </div>
+      <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+  </div>
 </div>

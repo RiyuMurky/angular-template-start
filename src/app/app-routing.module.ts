@@ -31,6 +31,7 @@ import { CalendarComponent } from './pages/calendar/calendar.component';
 import { MailboxComponent } from './pages/mailbox/mailbox.component';
 // Examples
 import { BlankPageComponent } from './pages/blank-page/blank-page.component';
+import { SearchResultComponent } from './pages/search-result/search-result.component';
 // Documentation
 import { DocumentationComponent } from './pages/documentation/documentation.component';
 // PageNotFoundComponent
@@ -69,6 +70,7 @@ const appRoutes: Routes = [
       { path: 'mailbox', component: MailboxComponent },
       // Examples
       { path: 'blackpage', component: BlankPageComponent },
+      { path: 'searchpage', component: SearchResultComponent },
       // Documentation
       { path: 'documentation', component: DocumentationComponent }
     ]},

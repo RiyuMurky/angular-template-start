@@ -1,13 +1,16 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import {RouterModule, Route, Routes, CanActivate,CanDeactivate} from '@angular/router';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
 
 import { StateService } from './shared/services/state.service';
+import { EventsService } from './shared/services/events.service';
 import { UserService } from './shared/services/user.service';
 import { WidgetExchangeService } from './shared/services/widget-exchange.service';
+import { HeaderExchangeService } from './shared/services/header-exchange.service';
+import { QuickSearchService } from './shared/services/quick-search.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -52,6 +55,7 @@ import { DocumentationComponent } from './pages/documentation/documentation.comp
 import { WpSmallBoxComponent } from './shared/widgets/wp-small-box/wp-small-box.component';
 import { WpInfoBoxComponent } from './shared/widgets/wp-info-box/wp-info-box.component';
 import { WpDirectChatComponent } from './shared/widgets/wp-direct-chat/wp-direct-chat.component';
+import { SearchResultComponent } from './pages/search-result/search-result.component';
 
 // const appRoutes: Routes = [
 //   { path: 'login', component: LoginComponent },
@@ -103,17 +107,26 @@ import { WpDirectChatComponent } from './shared/widgets/wp-direct-chat/wp-direct
     DocumentationComponent,
     WpSmallBoxComponent,
     WpInfoBoxComponent,
-    WpDirectChatComponent
+    WpDirectChatComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ChartsModule
     // RouterModule.forRoot(appRoutes)
   ],
-  providers: [StateService, UserService, WidgetExchangeService],
+  providers: [
+    StateService,
+    UserService,
+    WidgetExchangeService,
+    EventsService,
+    HeaderExchangeService,
+    QuickSearchService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

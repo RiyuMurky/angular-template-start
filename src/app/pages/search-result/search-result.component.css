@@ -1,0 +1,30 @@
+#search-results .search li a {
+    display: inline-block;
+    font-size: 120%;
+    margin-bottom: 12px;
+}
+
+#search-results .search li a {
+    color: #2980b9;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#search-results .context {
+    color: gray;
+    font-size: 90%;
+}
+
+#search-results .search li:first-child {
+    border-top: 1px solid #e1e4e5;
+    padding-top: 24px;
+}
+#search-results .search li {
+    border-bottom: 1px solid #e1e4e5;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+}
+
+#search-results .search li {
+    list-style: outside none none;
+}

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { SidebarMenuExchangeService } from 'app/shared/services/sidebar-menu-exchange.service';
+import { HeaderExchangeService } from 'app/shared/services/header-exchange.service';
 
 @Component({
   selector: '[app-sidebar-menu]',
@@ -301,6 +302,14 @@ export class SidebarMenuComponent implements OnInit {
       container: [],
       items: [
         {
+          href: 'pages/examples/search.html',
+          icon: 'fa fa-circle-o',
+          title: 'Search',
+          container: [],
+          items: [],
+          link: 'searchpage'
+        },
+        {
           href: 'pages/examples/invoice.html',
           icon: 'fa fa-circle-o',
           title: 'Invoice',
@@ -491,6 +500,9 @@ export class SidebarMenuComponent implements OnInit {
     } else {
       this.menuItems[index].active = true;
     }
+
+    // TODO: close header menu, maybe not use HeaderExchangeService
+    this._hExchangeService.openMenu(event);
   }
 
   public onClickMenuPrevent(event:Event, index: number):void {
@@ -500,13 +512,15 @@ export class SidebarMenuComponent implements OnInit {
   public onClickMenuSelect(event:Event, item: MenuItem):void {
     event.preventDefault();
     event.stopPropagation();
-
     this._smExchangeService.openMenu(this.currentItem);
     item.active = true;
 
+    // TODO: close header menu, maybe not use HeaderExchangeService
+    this._hExchangeService.openMenu(event);
   }
 
-  public constructor(private _smExchangeService:SidebarMenuExchangeService) {
+  public constructor(private _smExchangeService:SidebarMenuExchangeService,
+                     private _hExchangeService:HeaderExchangeService) {
 
   }
 
