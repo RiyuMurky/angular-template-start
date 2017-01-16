@@ -1,4 +1,5 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
+import { Router } from '@angular/router';
 import { HeaderExchangeService } from 'app/shared/services/header-exchange.service';
 import { UserService } from 'app/shared/services/user.service';
 import { Observable } from 'rxjs/Observable';
@@ -28,7 +29,8 @@ export class UserMenuComponent implements OnInit {
 
   public constructor(private headerExchangeService:HeaderExchangeService,
                      private userService:UserService,
-                     private authService:AuthService) {
+                     private authService:AuthService,
+                     private router:Router) {
     headerExchangeService.openMenuSubject.subscribe((value:Event) => {
       if(this.lastToggleEvent !== value) {
         this.isAriaExpanded = false;
@@ -65,6 +67,7 @@ export class UserMenuComponent implements OnInit {
     event.preventDefault();
     console.log(`onClickSignOut: ${event.target}`);
     this.authService.logout();
+    this.router.navigate(['/login']);
   }
 
 

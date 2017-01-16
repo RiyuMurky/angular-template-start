@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainHeaderComponent implements OnInit {
 
-  public logoHref: string = 'index2.html';
+  public logoLink: string = '/dashboard';
   public logoMini: string = '<b>A</b>LT';
   public logoLarge: string = '<b>Admin</b>LTE';
 

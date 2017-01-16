@@ -41,5 +41,17 @@ export class AuthService {
     this.users.push(user);
   }
 
-  public constructor(){ }
+  public constructor(){
+    let user:User = {
+      firstname: 'John',
+      lastname: 'Doe',
+      email: 'john.doe@mail.com',
+      avatarUrl: 'assets/img/user2-160x160.jpg',
+      creationDate: 'Jan. 2017',
+      preferredLang: 'en',
+      roleName: 'Web Developer',
+      password: 'pass'
+    }
+    this.pushUser(user);
+  }
 }

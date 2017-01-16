@@ -50,13 +50,14 @@ export class LoginComponent implements OnInit {
 
         // Set our navigation extras object
         // that passes on our global query params and fragment
-        let navigationExtras: NavigationExtras = {
-          preserveQueryParams: true,
-          preserveFragment: true
-        };
+        // let navigationExtras: NavigationExtras = {
+        //   preserveQueryParams: true,
+        //   preserveFragment: true
+        // };
 
         // Redirect the user
-        this.router.navigate([redirect], navigationExtras);
+        // this.router.navigate([redirect], navigationExtras);
+        this.router.navigate([redirect]);
       } else {
         this.isShowAlert = true;
         this.alertMessage = 'User or password incorrect.';
@@ -70,7 +71,7 @@ export class LoginComponent implements OnInit {
 
   public submit():void {
     this.hideAlert();
-    
+
     if(this.loginForm.valid){
       this.login();
     } else {

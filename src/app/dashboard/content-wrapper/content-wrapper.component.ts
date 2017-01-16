@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContentWrapperComponent implements OnInit {
 
-  public pageHeader:string = 'Page Header';
-  public description:string = 'Optional description';
+
 
   public constructor() { }
 

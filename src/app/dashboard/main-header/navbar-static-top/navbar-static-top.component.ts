@@ -33,7 +33,7 @@ export class NavbarStaticTopComponent implements OnInit {
     public onControlSidebarLogout(event: Event): void {
       event.preventDefault();
       this.authService.logout();
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
     }
 
 }
