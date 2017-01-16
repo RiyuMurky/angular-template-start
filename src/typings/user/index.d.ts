@@ -6,4 +6,5 @@ interface User {
   creationDate?: string;
   preferredLang?: string;
   roleName?: string;
+  password?: string;
 }

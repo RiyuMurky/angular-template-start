@@ -7,7 +7,6 @@ export class UserService {
   public currentUser: ReplaySubject<User> = new ReplaySubject<User>(1);
 
   public constructor() {
-
     let user:User = {
       firstname: 'Alexander',
       lastname: 'Pierce',

@@ -11,6 +11,8 @@ import { UserService } from './shared/services/user.service';
 import { WidgetExchangeService } from './shared/services/widget-exchange.service';
 import { HeaderExchangeService } from './shared/services/header-exchange.service';
 import { QuickSearchService } from './shared/services/quick-search.service';
+import { AuthGuardService } from './shared/services/auth-guard.service';
+import { AuthService } from './shared/services/auth.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -122,10 +124,14 @@ import { SearchResultComponent } from './pages/search-result/search-result.compo
   providers: [
     StateService,
     UserService,
-    WidgetExchangeService,
     EventsService,
+    // Exchange
+    WidgetExchangeService,
     HeaderExchangeService,
-    QuickSearchService
+    QuickSearchService,
+    // Auth
+    AuthService,
+    AuthGuardService
   ],
   bootstrap: [AppComponent]
 })

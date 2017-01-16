@@ -2,6 +2,7 @@ import { Component, OnInit, HostBinding } from '@angular/core';
 import { HeaderExchangeService } from 'app/shared/services/header-exchange.service';
 import { UserService } from 'app/shared/services/user.service';
 import { Observable } from 'rxjs/Observable';
+import { AuthService } from 'app/shared/services/auth.service';
 
 @Component({
   selector: '[app-user-menu]',
@@ -25,7 +26,9 @@ export class UserMenuComponent implements OnInit {
     }
   }
 
-  public constructor(private headerExchangeService:HeaderExchangeService, private userService:UserService) {
+  public constructor(private headerExchangeService:HeaderExchangeService,
+                     private userService:UserService,
+                     private authService:AuthService) {
     headerExchangeService.openMenuSubject.subscribe((value:Event) => {
       if(this.lastToggleEvent !== value) {
         this.isAriaExpanded = false;
@@ -61,6 +64,7 @@ export class UserMenuComponent implements OnInit {
   public onClickSignOut(event:Event):void {
     event.preventDefault();
     console.log(`onClickSignOut: ${event.target}`);
+    this.authService.logout();
   }
 
 
