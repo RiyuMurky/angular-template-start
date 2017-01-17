@@ -50,7 +50,7 @@ export class AuthService {
       creationDate: 'Jan. 2017',
       preferredLang: 'en',
       roleName: 'Web Developer',
-      password: 'pass'
+      password: 'nopassword'
     }
     this.pushUser(user);
   }

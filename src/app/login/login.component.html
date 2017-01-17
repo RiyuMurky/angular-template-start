@@ -54,7 +54,10 @@
 
     <div class="social-auth-links text-center">
       <p>- OR -</p>
-      <p>email: john.doe@mail.com | password: pass</p>
+      <p class="">email: john.doe@mail.com | password: nopassword</p>
+      <a (click)="signIn($event)" class="btn btn-block btn-social bg-maroon btn-flat">
+        <i class="fa fa-sign-in"></i> Sign in using john.doe@mail.com
+      </a>
       <a routerLink="/signup" class="btn btn-block btn-social btn-default btn-flat">
         <i class="fa fa-users"></i> Register a new membership
       </a>

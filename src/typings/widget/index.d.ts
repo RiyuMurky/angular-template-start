@@ -32,3 +32,9 @@ interface InfoBoxData extends BoxWidgetData {
 interface ObservableMap<T> {
     [key: string]: T;
 }
+
+interface Breadcrumb {
+  label: string;
+  params?: any;
+  url: string;
+}

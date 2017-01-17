@@ -38,9 +38,7 @@ export class LoginComponent implements OnInit {
     this.isShowAlert = false;
   }
 
-  public login(): void{
-    let email:string = this.loginForm.value.email;
-    let password:string = this.loginForm.value.password;
+  public login(email: string, password: string): void{
 
     this.authService.login(email, password).subscribe(() => {
       if (this.authService.isLoggedIn) {
@@ -73,11 +71,19 @@ export class LoginComponent implements OnInit {
     this.hideAlert();
 
     if(this.loginForm.valid){
-      this.login();
+      let email:string = this.loginForm.value.email;
+      let password:string = this.loginForm.value.password;
+      this.login(email, password);
     } else {
       this.isShowAlert = true;
       this.alertMessage = 'Login form invalid.';
     }
+  }
+
+  public signIn(): void {
+    let email:string = 'john.doe@mail.com';
+    let password:string = 'nopassword';
+    this.login(email, password);
   }
 
   ngOnInit() {

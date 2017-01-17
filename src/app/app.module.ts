@@ -13,6 +13,7 @@ import { HeaderExchangeService } from './shared/services/header-exchange.service
 import { QuickSearchService } from './shared/services/quick-search.service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AuthService } from './shared/services/auth.service';
+import { BreadcrumbService } from './shared/services/breadcrumb.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -129,6 +130,7 @@ import { SearchResultComponent } from './pages/search-result/search-result.compo
     WidgetExchangeService,
     HeaderExchangeService,
     QuickSearchService,
+    BreadcrumbService,
     // Auth
     AuthService,
     AuthGuardService

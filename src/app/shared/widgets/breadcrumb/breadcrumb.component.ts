@@ -9,13 +9,13 @@ import { BreadcrumbService } from 'app/shared/services/breadcrumb.service';
 export class BreadcrumbComponent implements OnInit {
   private display: boolean = false;
   // TODO: type for breadcrumb
-  private breadcrumb: Array<any> = [];
+  public breadcrumbs: Breadcrumb[] = [];
   public pageHeader:string = 'Page Header';
   public description:string = 'Optional description';
 
   public constructor(private breadcrumbService:BreadcrumbService) {
-      this.breadcrumbService.subsribe((data) => {
-        this.breadcrumb = data.breadcrumb;
+      this.breadcrumbService.currentBreadcrumbSubject.subscribe((data: Breadcrumb[]) => {
+        this.breadcrumbs = data;
       });
   }
 

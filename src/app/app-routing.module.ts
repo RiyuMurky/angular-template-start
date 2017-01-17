@@ -42,38 +42,42 @@ const appRoutes: Routes = [
   { path: '',   redirectTo: '/dashboard', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
-  { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService],
+  { path: 'dashboard', component: DashboardComponent,
+    canActivate: [ AuthGuardService ],
+    data: { breadcrumb: "Home" },
     children: [
+      // RedirectTo
+      { path: '', redirectTo: 'dashboardv1', pathMatch: 'full' },
       // Dashboard
-      { path: 'dashboardv1', component: DashboardV1Component },
-      { path: 'dashboardv2', component: DashboardV2Component },
+      { path: 'dashboardv1', component: DashboardV1Component, data: { breadcrumb: ["Dashboard", "Dashboard ver. 1"] } },
+      { path: 'dashboardv2', component: DashboardV2Component, data: { breadcrumb: ["Dashboard", "Dashboard ver. 2"] } },
       // Layout options
-      { path: 'layoutoptions', component: LayoutOptionsComponent },
+      { path: 'layoutoptions', component: LayoutOptionsComponent, data: { breadcrumb: "Layout Options" } },
       // Widgets
-      { path: 'widgets', component: WidgetsComponent },
-      { path: 'charts', component: ChartsComponent },
+      { path: 'widgets', component: WidgetsComponent, data: { breadcrumb: "Widgets" } },
+      { path: 'charts', component: ChartsComponent, data: { breadcrumb: "Charts" } },
       // UI Elements
-      { path: 'uielementsgeneral', component: UiElementsGeneralComponent },
-      { path: 'uielementsicons', component: UiElementsIconsComponent },
-      { path: 'uielementsbuttons', component: UiElementsButtonsComponent },
-      { path: 'uielementssliders', component: UiElementsSlidersComponent },
-      { path: 'uielementstimeline', component: UiElementsTimelineComponent },
-      { path: 'uielementsmodals', component: UiElementsModalsComponent },
+      { path: 'uielementsgeneral', component: UiElementsGeneralComponent, data: { breadcrumb: ["UI Elements", "General"] } },
+      { path: 'uielementsicons', component: UiElementsIconsComponent, data: { breadcrumb: ["UI Elements", "Icons"] } },
+      { path: 'uielementsbuttons', component: UiElementsButtonsComponent, data: { breadcrumb: ["UI Elements", "Buttons"] } },
+      { path: 'uielementssliders', component: UiElementsSlidersComponent, data: { breadcrumb: ["UI Elements", "Sliders"] } },
+      { path: 'uielementstimeline', component: UiElementsTimelineComponent, data: { breadcrumb: ["UI Elements", "Timeline"] } },
+      { path: 'uielementsmodals', component: UiElementsModalsComponent, data: { breadcrumb: ["UI Elements", "Modals"] } },
       // Forms
-      { path: 'formsgeneral', component: FormsGeneralElementsComponent },
-      { path: 'formsadvanced', component: FormsAdvancedElementsComponent },
-      { path: 'formseditors', component: FormsEditorsComponent },
+      { path: 'formsgeneral', component: FormsGeneralElementsComponent, data: { breadcrumb: ["Forms", "General"] } },
+      { path: 'formsadvanced', component: FormsAdvancedElementsComponent, data: { breadcrumb: ["Forms", "Advanced"] } },
+      { path: 'formseditors', component: FormsEditorsComponent, data: { breadcrumb: ["Forms", "Editors"] } },
       // Tables
-      { path: 'simpletables', component: SimpleTablesComponent },
-      { path: 'datatables', component: DataTablesComponent },
+      { path: 'simpletables', component: SimpleTablesComponent, data: { breadcrumb: "Simple Tables" } },
+      { path: 'datatables', component: DataTablesComponent, data: { breadcrumb: "Data Tables" } },
       // Calendar, Mailbox
-      { path: 'calendar', component: CalendarComponent },
-      { path: 'mailbox', component: MailboxComponent },
+      { path: 'calendar', component: CalendarComponent, data: { breadcrumb: "Calendar" } },
+      { path: 'mailbox', component: MailboxComponent, data: { breadcrumb: "Mailbox" } },
       // Examples
-      { path: 'blackpage', component: BlankPageComponent },
-      { path: 'searchpage', component: SearchResultComponent },
+      { path: 'blackpage', component: BlankPageComponent, data: { breadcrumb: "Black Page" } },
+      { path: 'searchpage', component: SearchResultComponent, data: { breadcrumb: "Search Page" } },
       // Documentation
-      { path: 'documentation', component: DocumentationComponent }
+      { path: 'documentation', component: DocumentationComponent, data: { breadcrumb: "Documentation" } }
     ]},
   { path: '**', component: DashboardComponent }
   // { path: '**', component: PageNotFoundComponent }

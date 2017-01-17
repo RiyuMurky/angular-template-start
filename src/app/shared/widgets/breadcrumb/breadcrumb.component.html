@@ -1,9 +1,9 @@
 <h1>{{pageHeader}}<small>{{description}}</small></h1>
 <ol class="breadcrumb">
-  <template let-item ngFor [ngForOf]="breadcrumb">
-    <li [class.active]="item.active">
-      <a [routerLink]="item.link">
-        <i class="fa fa-{{item.icon}}"></i> {{ item.title }}
+  <template let-item ngFor [ngForOf]="breadcrumbs">
+    <li [class.active]="item?.active">
+      <a [routerLink]="item.url">
+        <i class="fa fa-{{item?.icon}}"></i> {{ item.label }}
       </a>
     </li>
   </template>
