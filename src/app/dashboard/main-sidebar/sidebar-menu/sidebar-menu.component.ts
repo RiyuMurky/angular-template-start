@@ -24,7 +24,7 @@ export class SidebarMenuComponent implements OnInit {
       items: [
         {
           icon: 'fa fa-circle-o',
-          title: 'Dashboard v1',
+          title: 'Dashboard ver. 1',
           items: [],
           container: [],
           href: 'index.html',
@@ -32,7 +32,7 @@ export class SidebarMenuComponent implements OnInit {
         },
         {
           icon: 'fa fa-circle-o',
-          title: 'Dashboard v2',
+          title: 'Dashboard ver. 2',
           items: [],
           container: [],
           href: 'index2.html',
