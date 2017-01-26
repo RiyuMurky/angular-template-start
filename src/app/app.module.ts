@@ -14,6 +14,7 @@ import { QuickSearchService } from './shared/services/quick-search.service';
 import { AuthGuardService } from './shared/services/auth-guard.service';
 import { AuthService } from './shared/services/auth.service';
 import { BreadcrumbService } from './shared/services/breadcrumb.service';
+import { ContentHeaderService } from './shared/services/content-header.service';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -59,6 +60,10 @@ import { WpSmallBoxComponent } from './shared/widgets/wp-small-box/wp-small-box.
 import { WpInfoBoxComponent } from './shared/widgets/wp-info-box/wp-info-box.component';
 import { WpDirectChatComponent } from './shared/widgets/wp-direct-chat/wp-direct-chat.component';
 import { SearchResultComponent } from './pages/search-result/search-result.component';
+import { WpSocialUserV1Component } from './shared/widgets/wp-social-user-v1/wp-social-user-v1.component';
+import { WpSocialUserV2Component } from './shared/widgets/wp-social-user-v2/wp-social-user-v2.component';
+import { WpSocialTapeComponent } from './shared/widgets/wp-social-tape/wp-social-tape.component';
+import { ContentHeaderComponent } from './shared/widgets/content-header/content-header.component';
 
 // const appRoutes: Routes = [
 //   { path: 'login', component: LoginComponent },
@@ -111,7 +116,11 @@ import { SearchResultComponent } from './pages/search-result/search-result.compo
     WpSmallBoxComponent,
     WpInfoBoxComponent,
     WpDirectChatComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    WpSocialUserV1Component,
+    WpSocialUserV2Component,
+    WpSocialTapeComponent,
+    ContentHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -131,6 +140,7 @@ import { SearchResultComponent } from './pages/search-result/search-result.compo
     HeaderExchangeService,
     QuickSearchService,
     BreadcrumbService,
+    ContentHeaderService,
     // Auth
     AuthService,
     AuthGuardService

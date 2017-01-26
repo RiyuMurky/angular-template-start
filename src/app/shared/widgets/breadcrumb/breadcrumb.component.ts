@@ -10,8 +10,6 @@ export class BreadcrumbComponent implements OnInit {
   private display: boolean = false;
   // TODO: type for breadcrumb
   public breadcrumbs: Breadcrumb[] = [];
-  public pageHeader:string = 'Page Header';
-  public description:string = 'Optional description';
 
   public constructor(private breadcrumbService:BreadcrumbService) {
       this.breadcrumbService.currentBreadcrumbSubject.subscribe((data: Breadcrumb[]) => {

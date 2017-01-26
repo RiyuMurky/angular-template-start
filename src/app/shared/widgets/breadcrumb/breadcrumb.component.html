@@ -1,5 +1,4 @@
-<h1>{{pageHeader}}<small>{{description}}</small></h1>
-<ol class="breadcrumb">
+
   <template let-item ngFor [ngForOf]="breadcrumbs">
     <li [class.active]="item?.active">
       <a [routerLink]="item.url">
@@ -7,4 +6,3 @@
       </a>
     </li>
   </template>
-</ol>

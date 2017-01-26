@@ -38,3 +38,8 @@ interface Breadcrumb {
   params?: any;
   url: string;
 }
+
+interface HeaderData {
+  title: string;
+  info?: string;
+}

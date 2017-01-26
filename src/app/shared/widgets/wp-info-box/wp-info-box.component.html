@@ -9,7 +9,7 @@
     <span class="info-box-number">{{wpBoxData.contentNumber}}</span>
     <div *ngIf="wpBoxData.progress">
       <div class="progress">
-        <div class="progress-bar" [style.width]="wpBoxData.progressValue"></div>
+        <div class="progress-bar" [style.width.%]="wpBoxData.progressValue"></div>
       </div>
       <span class="progress-description">{{wpBoxData.progressDesc}}</span>
     </div>
