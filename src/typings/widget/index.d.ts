@@ -35,8 +35,14 @@ interface ObservableMap<T> {
 
 interface Breadcrumb {
   label: string;
+  icon?: string;
   params?: any;
   url: string;
+}
+
+interface BreadcrumbData {
+  label: string,
+  icon?: string
 }
 
 interface HeaderData {

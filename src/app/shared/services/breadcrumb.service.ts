@@ -58,17 +58,18 @@ export class BreadcrumbService {
       url += `/${routeURL}`;
 
       //add breadcrumb
-      let labels: string[];
+      let items: BreadcrumbData[];
       if(!Array.isArray(child.snapshot.data[this.route_data])){
-        labels = [child.snapshot.data[this.route_data]];
+        items = [child.snapshot.data[this.route_data]];
       } else {
-        labels = child.snapshot.data[this.route_data]
+        items = child.snapshot.data[this.route_data];
       }
 
-      for (let label of labels) {
+      for (let item of items) {
 
         let breadcrumb: Breadcrumb = {
-          label: label,
+          label: item.label,
+          icon: item.icon,
           params: child.snapshot.params,
           url: url
         };

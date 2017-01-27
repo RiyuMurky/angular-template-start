@@ -2,7 +2,8 @@
   <template let-item ngFor [ngForOf]="breadcrumbs">
     <li [class.active]="item?.active">
       <a [routerLink]="item.url">
-        <i class="fa fa-{{item?.icon}}"></i> {{ item.label }}
+        <i class="fa fa-{{item?.icon}}"></i>
+        {{ item.label }}
       </a>
     </li>
   </template>
