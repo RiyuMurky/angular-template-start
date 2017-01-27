@@ -9,14 +9,14 @@ import { ContentHeaderService } from 'app/shared/services/content-header.service
 export class ContentHeaderComponent implements OnInit {
 
   public pageTitle: string = '';
-  public pageDesc: string = '';
+  public pageInfo: string = '';
 
   public constructor(private contentHeaderService:ContentHeaderService) {
-    this.contentHeaderService.currentHeaderSubject.subscribe((data: HeaderData) => {
-      console.log(data);
-      this.pageTitle = data.title;
-      this.pageDesc = data.info;
-    });
+    this.contentHeaderService.currentHeaderSubject
+      .subscribe((data: HeaderData) => {
+        this.pageTitle = data.title;
+        this.pageInfo = data.info;
+      });
   }
 
   ngOnInit() {

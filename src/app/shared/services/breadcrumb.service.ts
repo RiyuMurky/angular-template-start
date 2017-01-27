@@ -20,12 +20,12 @@ export class BreadcrumbService {
     this.currentBreadcrumbSubject = new ReplaySubject(1);
     // this.breadcrumbs = [];
     //subscribe to the NavigationEnd event
-    this.router.events.filter(event => event instanceof NavigationEnd).subscribe(event => {
-      //set breadcrumbs
-      let root: ActivatedRoute = this.activatedRoute.root;
-      // this.breadcrumbs = this.getBreadcrumbs(root);
-      this.set(this.getBreadcrumbs(root));
-    });
+    this.router.events
+      .filter(event => event instanceof NavigationEnd)
+      .subscribe(event => {
+        let root: ActivatedRoute = this.activatedRoute.root;
+        this.set(this.getBreadcrumbs(root));
+      });
 
   }
 
@@ -66,7 +66,7 @@ export class BreadcrumbService {
       }
 
       for (let label of labels) {
-        
+
         let breadcrumb: Breadcrumb = {
           label: label,
           params: child.snapshot.params,

@@ -14,17 +14,25 @@ export class ContentHeaderService {
     private router: Router
   ) {
     this.currentHeaderSubject = new ReplaySubject(1);
-    this.router.events.filter(event => event instanceof NavigationEnd).subscribe(event => {
+    // this.router.events.filter(event => event instanceof NavigationEnd).subscribe(event => {
+    //   let root: ActivatedRoute = this.activatedRoute.root;
+    //   let current: ActivatedRoute =  this.activatedRoute;
+    //   if (current.snapshot.data.hasOwnProperty(this.route_data)) {
+    //     let headerData: HeaderData = current.snapshot.data[this.route_data];
+    //     this.currentHeaderSubject.next(headerData);
+    //   }
+    // });
 
-      console.log(event);
-      console.log(this.activatedRoute);
-      console.log(this.router);
+    this.router.events
+        .filter(event => event instanceof NavigationEnd)
+        .map(() => this.activatedRoute)
+        .map(route => {
+          while (route.firstChild) route = route.firstChild;
+          return route;
+        })
+        .filter(route => route.outlet === 'primary')
+        .mergeMap(route => route.data)
+        .subscribe((event) => this.currentHeaderSubject.next(event[this.route_data]));
 
-      let current: ActivatedRoute = this.activatedRoute;
-      if (current.snapshot.data.hasOwnProperty(this.route_data)) {
-        let headerData: HeaderData = current.snapshot.data[this.route_data];
-        this.currentHeaderSubject.next(headerData);
-      }
-    });
   }
 }
