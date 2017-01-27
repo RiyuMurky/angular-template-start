@@ -64,6 +64,7 @@ import { WpSocialUserV1Component } from './shared/widgets/wp-social-user-v1/wp-s
 import { WpSocialUserV2Component } from './shared/widgets/wp-social-user-v2/wp-social-user-v2.component';
 import { WpSocialTapeComponent } from './shared/widgets/wp-social-tape/wp-social-tape.component';
 import { ContentHeaderComponent } from './shared/widgets/content-header/content-header.component';
+import { ClockMenuComponent } from './dashboard/main-header/navbar-static-top/clock-menu/clock-menu.component';
 
 // const appRoutes: Routes = [
 //   { path: 'login', component: LoginComponent },
@@ -120,7 +121,8 @@ import { ContentHeaderComponent } from './shared/widgets/content-header/content-
     WpSocialUserV1Component,
     WpSocialUserV2Component,
     WpSocialTapeComponent,
-    ContentHeaderComponent
+    ContentHeaderComponent,
+    ClockMenuComponent
   ],
   imports: [
     BrowserModule,
