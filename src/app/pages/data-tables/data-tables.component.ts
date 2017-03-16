@@ -1,5 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
+interface ObjectRows {
+  name:string;
+  email:string;
+  age:string;
+  city:string;
+}
+
+interface ObjectDataTables {
+  data:ObjectRows[];
+}
+
 @Component({
   selector: 'app-data-tables',
   templateUrl: './data-tables.component.html',
@@ -7,9 +18,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DataTablesComponent implements OnInit {
 
-  constructor() { }
+public data;
 
-  ngOnInit() {
+  public constructor() {
+    this.data = [
+      {name: "Vladimir", email:"vladimir@mail.com", age: "16", city: "mycity"},
+      {name: "Eliza", email:"eliza@mail.com", age: "20", city: "mycity"},
+    ];
   }
 
+  ngOnInit() {
+
+  }
 }

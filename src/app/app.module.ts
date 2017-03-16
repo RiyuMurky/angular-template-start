@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import {RouterModule, Route, Routes, CanActivate,CanDeactivate} from '@angular/router';
+import { RouterModule, Route, Routes, CanActivate,CanDeactivate } from '@angular/router';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
+import { DataTableModule } from "angular2-datatable";
 
 import { StateService } from './shared/services/state.service';
 import { EventsService } from './shared/services/events.service';
@@ -130,7 +131,8 @@ import { ClockMenuComponent } from './dashboard/main-header/navbar-static-top/cl
     HttpModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    ChartsModule
+    ChartsModule,
+    DataTableModule
     // RouterModule.forRoot(appRoutes)
   ],
   providers: [
